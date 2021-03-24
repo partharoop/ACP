@@ -1,3 +1,5 @@
+
+package SetOfStrings;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -31,12 +33,12 @@ public class SetOfStringsTest {
 
 		set1.insertElement("a");
 		set1.insertElement("b");
-		
-		assertTrue(set1.isMember("a"));
-		assertTrue(set1.isMember("b"));
-		//SetOfStrings expected = new SetOfStrings();
-		//expected.insertElement("a");
-		//expected.insertElement("b");
-		//assertEquals(expected, set1.equals(set2));
+		set1.insertElement("a");
+		//assertTrue(set1.isMember("a"));
+		//assertTrue(set1.isMember("b"));
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("a");
+		expected.insertElement("b");
+		assertEquals(expected, set1);
 	}
 }

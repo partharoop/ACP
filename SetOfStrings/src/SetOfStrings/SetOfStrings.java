@@ -1,3 +1,4 @@
+package SetOfStrings;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
@@ -63,9 +64,9 @@ public class SetOfStrings {
 	 * @param newElement a String
 	 */
 	public void insertElement(String newElement) {
-		if (!isMember(newElement)) {
+		
 			setv.add(newElement);
-		}
+		
 	}
 
 	/**
@@ -96,8 +97,7 @@ public class SetOfStrings {
 	 */
 	public SetOfStrings union(SetOfStrings set2) {
 		SetOfStrings out = new SetOfStrings();
-		out.addAllElements(this);
-		out.addAllElements(set2);
+		
 		return out;
 	}
 
