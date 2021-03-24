@@ -110,13 +110,6 @@ public class SetOfStrings {
 	 */
 	public SetOfStrings intersection(SetOfStrings set2) {
 		SetOfStrings out = new SetOfStrings();
-		Enumeration<String> s1 = elements();
-		while (s1.hasMoreElements()) {
-			String nextS1 = (String) s1.nextElement();
-			if (set2.isMember(nextS1)) {
-				out.insertElement(nextS1);
-			}
-		}
 		return out;
 	}
 
@@ -129,13 +122,6 @@ public class SetOfStrings {
 	 */
 	public SetOfStrings difference(SetOfStrings set2) {
 		SetOfStrings out = new SetOfStrings();
-		Enumeration<String> s1 = elements();
-		while (s1.hasMoreElements()) {
-			String nextS1 = (String) s1.nextElement();
-			if (!set2.isMember(nextS1)) {
-				out.insertElement(nextS1);
-			}
-		}
 		return out;
 	}
 
@@ -149,26 +135,10 @@ public class SetOfStrings {
 	 **/
 
 	public SetOfStrings product(SetOfStrings set2) {
-		Enumeration<String> s1 = elements();
+
 		SetOfStrings out = new SetOfStrings();
 
-		// set2.displaySet();
-		while (s1.hasMoreElements()) {
-			String firstSetEl = (String) s1.nextElement();
-			// System.out.println("First set element "+ firstSetEl);
-			// s2 needs to be declared inside the outer while so that
-			// it is pointing to the start again
-			Enumeration<String> s2 = set2.elements();
-			while (s2.hasMoreElements()) {
-				String secondSetEl = (String) s2.nextElement();
-				// System.out.println("Second set element "+ secondSetEl);
-				// firstSetEl.trim();
-				// secondSetEl.trim();
-				out.insertElement(firstSetEl + "," + secondSetEl);
-			}
-		}
-		// System.out.println("The product set is");
-		// out.displaySet();
+		// set2.displaySet()
 		return out;
 	}
 
@@ -179,13 +149,7 @@ public class SetOfStrings {
 	 * @param set2 a SetOfStrings
 	 **/
 	public boolean subset(SetOfStrings set2) {
-		Enumeration<String> s2 = set2.elements();
-		while (s2.hasMoreElements()) {
-			String secondSetEl = (String) s2.nextElement();
-			if (!isMember(secondSetEl)) {
-				return false;
-			}
-		}
+		
 		return true;
 	}
 
