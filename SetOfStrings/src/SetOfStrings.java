@@ -46,7 +46,7 @@ public class SetOfStrings {
 	 * @param element a String
 	 */
 	public boolean isMember(String element) {
-		return setv.contains(element);
+		return true;
 	}
 
 	/**
