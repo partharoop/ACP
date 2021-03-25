@@ -39,6 +39,6 @@ public class SetOfStringsTest {
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("a");
 		expected.insertElement("b");
-		//assertEquals(expected, set1);
+		assertEquals(expected, set1);
 	}
 }
