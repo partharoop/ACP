@@ -69,7 +69,9 @@ public class SetOfStrings {
 	 * @param newElement a String
 	 */
 	public void insertElement(String newElement) {
+		if(!isMember(newElement)) {
 			setv.add(newElement);
+		}
 		
 	}
 
