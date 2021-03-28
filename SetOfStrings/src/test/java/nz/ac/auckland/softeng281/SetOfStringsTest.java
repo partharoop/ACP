@@ -79,4 +79,14 @@ public class SetOfStringsTest {
 		}
 	}
 	
+	@Test public void testUnionWithEmpty() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1=set1.union(set2);
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("a");
+		expected.insertElement("b");
+		assertEquals(expected, set1);
+	}
+	
 }

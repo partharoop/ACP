@@ -108,7 +108,6 @@ public class SetOfStrings {
 	 */
 	public SetOfStrings union(SetOfStrings set2) {
 		SetOfStrings out = new SetOfStrings();
-		
 		return out;
 	}
 
