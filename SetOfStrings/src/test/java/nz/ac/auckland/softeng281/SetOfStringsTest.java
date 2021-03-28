@@ -2,6 +2,7 @@
 package nz.ac.auckland.softeng281;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -13,6 +14,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
+import java.util.NoSuchElementException;
+
 
 public class SetOfStringsTest {
 	SetOfStrings set1, set2;
@@ -47,4 +50,33 @@ public class SetOfStringsTest {
 		set1.insertElement("a");
 		assertEquals(set1.size(),2);
 	}
+	
+	@Test
+	public void testRemoveEmpty() {
+		
+		try {
+			set1.displaySet();
+			set1.deleteElement("a");
+			fail();
+		}
+		catch(NoSuchElementException e) {
+			
+		}
+	}
+	
+	@Test
+	public void testRemove() {
+		try {
+			set1.insertElement("a");
+			set1.insertElement("b");
+			set1.insertElement("a");
+			set1.deleteElement("a");
+			set1.deleteElement("b");
+			assertEquals(set1.size(),0);
+		}
+		catch(NoSuchElementException e) {
+			fail();
+		}
+	}
+	
 }
