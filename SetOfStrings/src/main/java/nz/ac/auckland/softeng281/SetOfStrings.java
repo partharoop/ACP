@@ -84,7 +84,12 @@ public class SetOfStrings {
 	 *                                set
 	 */
 	public void deleteElement(String element) throws NoSuchElementException {
-		setv.remove(element);
+		if(isMember(element)) {
+			setv.remove(element);
+		}
+		else {
+			throw new  NoSuchElementException("Deleting from an empty set");
+		}
 	}
 
 	private void addAllElements(SetOfStrings set1) {
