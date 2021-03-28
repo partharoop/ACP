@@ -34,11 +34,17 @@ public class SetOfStringsTest {
 		set1.insertElement("a");
 		set1.insertElement("b");
 		set1.insertElement("a");
-		//assertTrue(set1.isMember("a"));
-		//assertTrue(set1.isMember("b"));
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("a");
 		expected.insertElement("b");
 		assertEquals(expected, set1);
+	}
+	
+	@Test
+	public void testInsert1() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("a");
+		assertEquals(set1.size(),2);
 	}
 }

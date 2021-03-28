@@ -14,10 +14,7 @@ import java.util.NoSuchElementException;
  * @author PARTHA ROOP
  */
 
-/**
- * @author valerio
- *
- */
+
 public class SetOfStrings {
 	private List<String> setv;
 
@@ -49,7 +46,13 @@ public class SetOfStrings {
 	 * @param element a String
 	 */
 	public boolean isMember(String element) {
-		return true;
+		
+		if(setv.contains(element)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	/**
@@ -66,7 +69,6 @@ public class SetOfStrings {
 	 * @param newElement a String
 	 */
 	public void insertElement(String newElement) {
-		
 			setv.add(newElement);
 		
 	}
