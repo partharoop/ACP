@@ -89,4 +89,27 @@ public class SetOfStringsTest {
 		assertEquals(expected, set1);
 	}
 	
+	//subset test
+	@Test public void testSubset1() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("a");
+		expected.insertElement("b");
+		assertEquals(true, set1.subset(expected));
+	}
+	
+	//proper subset test
+	@Test public void testSubset2() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("c");
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("a");
+		expected.insertElement("b");
+		assertEquals(true, set1.subset(expected));
+	}
+	
+	
 }

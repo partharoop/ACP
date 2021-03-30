@@ -163,7 +163,7 @@ public class SetOfStrings {
 	 **/
 	public boolean subset(SetOfStrings set2) {
 		
-		return true;
+		return false;
 	}
 
 	/**
