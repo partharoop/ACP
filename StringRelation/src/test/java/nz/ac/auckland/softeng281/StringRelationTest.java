@@ -31,5 +31,11 @@ public class StringRelationTest {
 	public void tearDown() {
 
 	}
+	
+	@Test
+	public void testISValid() {
+		
+		
+	}
 
 }
