@@ -162,8 +162,16 @@ public class SetOfStrings {
 	 * @param set2 a SetOfStrings
 	 **/
 	public boolean subset(SetOfStrings set2) {
+
+		Enumeration<String> e2 = set2.elements();
+		while (e2.hasMoreElements()) {
+			String m2 = e2.nextElement();
+			if(!isMember(m2)) {
+				return false;
+			}
+		}
 		
-		return false;
+		return true;
 	}
 
 	/**
