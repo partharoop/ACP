@@ -204,7 +204,8 @@ public class SetOfStrings {
 			return false;
 		}
 		SetOfStrings set = (SetOfStrings) other;
-		return setv.equals(set.setv);
+		//return setv.equals(set.setv);
+		return (subset((SetOfStrings) other) && ((SetOfStrings) other).subset(this));
 		
 	}
 
