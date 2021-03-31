@@ -111,5 +111,46 @@ public class SetOfStringsTest {
 		assertEquals(true, set1.subset(expected));
 	}
 	
+	//Product of a set of size 3 with an empty set
+	@Test public void testProductWithEmpty() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("c");
+
+		//SetOfStrings expected = new SetOfStrings();
+
+		assertEquals(set1.product(set2).size(),0);
+	}
+	
+	//Product with a set2 of size 1
+	@Test public void testProduct1() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("c");
+		set2.insertElement("a");
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("a,a");
+		expected.insertElement("b,a");
+		expected.insertElement("c,a");
+		assertEquals(expected, set1.product(set2));
+	}
+	
+		//Product with a set2 of size 3
+		@Test public void testProduct2() {
+			set1.insertElement("a");
+			set1.insertElement("b");
+			set1.insertElement("c");
+			set2.insertElement("a");
+			set2.insertElement("d");
+			SetOfStrings expected = new SetOfStrings();
+			expected.insertElement("a,a");
+			expected.insertElement("b,a");
+			expected.insertElement("c,a");
+			expected.insertElement("a,d");
+			expected.insertElement("b,d");
+			expected.insertElement("c,d");
+			assertEquals(set1.product(set2).size(),6);
+			assertEquals(expected, set1.product(set2));
+		}
 	
 }
