@@ -56,4 +56,23 @@ public class StringRelationTest {
 		//r = new StringRelation(nodes, edges);
 		assertFalse(edges.isValid());
 	}
+	
+	@Test
+	public void testIsValidEqual() {
+		nodes.insertElement("0");
+		nodes.insertElement("1");
+		nodes.insertElement("2");
+		edges.insertElement("0,0");
+		edges.insertElement("0,1");
+		edges.insertElement("0,1");
+		edges.insertElement("1,0");
+		edges.insertElement("1,1");
+		edges.insertElement("1,2");
+		edges.insertElement("2,0");
+		edges.insertElement("2,1");
+		edges.insertElement("2,2");
+		
+		//r = new StringRelation(nodes, edges);
+		assertTrue(edges.isValid());
+	}
 }
