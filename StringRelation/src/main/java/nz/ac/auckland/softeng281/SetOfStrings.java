@@ -152,11 +152,12 @@ public class SetOfStrings {
 		SetOfStrings out = new SetOfStrings();
 		
 		Enumeration<String> e1 = elements();
-		Enumeration<String> e2 = set2.elements();
+		
 		while (e1.hasMoreElements()) {
 			String m1 = (String) e1.nextElement();
-			
+			Enumeration<String> e2 = set2.elements();
 			while(e2.hasMoreElements()) {
+				
 				String m2 = (String) e2.nextElement();
 				out.insertElement(m1+","+m2);
 			}	

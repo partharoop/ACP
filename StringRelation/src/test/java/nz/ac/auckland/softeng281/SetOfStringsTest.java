@@ -135,25 +135,25 @@ public class SetOfStringsTest {
 		assertEquals(expected, set1.product(set2));
 	}
 	
-		//Product with a set2 of size 3
-		@Test public void testProduct2() {
-			set1.insertElement("a");
-			set1.insertElement("b");
-			set1.insertElement("c");
-			set2.insertElement("a");
-			set2.insertElement("d");
-			SetOfStrings expected = new SetOfStrings();
-			expected.insertElement("a,a");
-			expected.insertElement("b,a");
-			expected.insertElement("c,a");
-			expected.insertElement("a,d");
-			expected.insertElement("b,d");
-			expected.insertElement("c,d");
-			System.out.println("Display the product set");
-			set1.product(set2).displaySet();
-			assertEquals(set1.product(set2).size(),6);
-			assertEquals(expected, set1.product(set2));
-			
-		}
+	//Product with a set2 of size 3
+	@Test public void testProduct2() {
+		set1.insertElement("a");
+		set1.insertElement("b");
+		set1.insertElement("c");
+		set2.insertElement("a");
+		set2.insertElement("d");
+		SetOfStrings expected = new SetOfStrings();
+		expected.insertElement("a,a");
+		expected.insertElement("b,a");
+		expected.insertElement("c,a");
+		expected.insertElement("a,d");
+		expected.insertElement("b,d");
+		expected.insertElement("c,d");
+		System.out.println("Display the product set");
+		set1.product(set2).displaySet();
+		assertEquals(set1.product(set2).size(),6);
+		assertEquals(expected, set1.product(set2));
+		
+	}
 	
 }
