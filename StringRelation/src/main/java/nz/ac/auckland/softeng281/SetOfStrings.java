@@ -150,8 +150,18 @@ public class SetOfStrings {
 	public SetOfStrings product(SetOfStrings set2) {
 
 		SetOfStrings out = new SetOfStrings();
-
-		// set2.displaySet()
+		
+		Enumeration<String> e1 = elements();
+		Enumeration<String> e2 = set2.elements();
+		while (e1.hasMoreElements()) {
+			String m1 = (String) e1.nextElement();
+			
+			while(e2.hasMoreElements()) {
+				String m2 = (String) e2.nextElement();
+				out.insertElement(m1+","+m2);
+			}	
+		}
+		
 		return out;
 	}
 
@@ -194,6 +204,7 @@ public class SetOfStrings {
 		}
 		SetOfStrings set = (SetOfStrings) other;
 		return setv.equals(set.setv);
+		
 	}
 
 }
