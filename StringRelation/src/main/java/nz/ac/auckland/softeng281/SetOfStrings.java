@@ -152,14 +152,19 @@ public class SetOfStrings {
 		SetOfStrings out = new SetOfStrings();
 		
 		Enumeration<String> e1 = elements();
-		
+		StringBuilder sb = new StringBuilder();
 		while (e1.hasMoreElements()) {
 			String m1 = (String) e1.nextElement();
 			Enumeration<String> e2 = set2.elements();
 			while(e2.hasMoreElements()) {
 				
 				String m2 = (String) e2.nextElement();
-				out.insertElement(m1+","+m2);
+				//StringBuilder sb = new StringBuilder();
+				sb.append(m1);
+				sb.append(",");
+				sb.append(m2);
+				out.insertElement(sb.toString());
+				sb.delete(0,sb.length());
 			}	
 		}
 		
