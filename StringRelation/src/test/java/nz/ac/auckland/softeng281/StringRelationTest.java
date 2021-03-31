@@ -2,6 +2,7 @@ package nz.ac.auckland.softeng281;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.fail;
 
 import java.io.ByteArrayOutputStream;
@@ -42,7 +43,7 @@ public class StringRelationTest {
 		edges.insertElement("0,0");
 		edges.insertElement("1,1");
 		//r = new StringRelation(nodes, edges);
-		assertEquals(true, edges.isValid());
+		assertTrue(edges.isValid());
 	}
 
 	@Test
@@ -53,6 +54,6 @@ public class StringRelationTest {
 		edges.insertElement("0,0");
 		edges.insertElement("3,1");
 		//r = new StringRelation(nodes, edges);
-		assertEquals(false, edges.isValid());
+		assertFalse(edges.isValid());
 	}
 }
