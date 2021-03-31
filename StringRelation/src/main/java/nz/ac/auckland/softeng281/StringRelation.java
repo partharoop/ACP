@@ -9,8 +9,7 @@ import java.util.Enumeration;
  * @author Partha Roop
  */
 public class StringRelation extends SetOfStrings {
-	// This is a set used to store the members of the binary relation
-	private SetOfStrings relation;
+
 	// This is the set used to construct the relation
 	private SetOfStrings setMembers;
 
@@ -26,29 +25,35 @@ public class StringRelation extends SetOfStrings {
 	 * create an empty StringRelation when no arguments are given -- constructor In
 	 * this event the setMembers is a new SetOfStrings with no members yet
 	 */
-	public StringRelation(SetOfStrings s, SetOfStrings r) {
+	public StringRelation(SetOfStrings s) {
 		setMembers = s;
-		relation = r;
+		//relation = r;
 	}
 
 	public Enumeration<String> getRelationalElements() {
-		return relation.elements();
+		return elements();
 	}
 
 	public Enumeration<String> getSetMemberElements() {
 		return setMembers.elements();
 	}
 
-	public void setRelationalElements(SetOfStrings inp) {
+	/*public void setRelationalElements(SetOfStrings inp) {
 		relation = inp;
-	}
+	}*/
 
 	public void setSetMemberElements(SetOfStrings inp) {
 		setMembers = inp;
 	}
 
 	public boolean isValid() {
-		return true;
+		
+		if(setMembers.product(setMembers).subset(this)) {
+			return true;
+		}
+		else { 
+			return false;
+		}
 	}
 
 	

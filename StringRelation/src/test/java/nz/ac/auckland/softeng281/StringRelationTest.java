@@ -19,12 +19,13 @@ import java.util.NoSuchElementException;
 
 public class StringRelationTest {
 	SetOfStrings nodes;
-	SetOfStrings edges;
-	StringRelation r;
+	StringRelation edges;
+	//StringRelation r;
 	@Before
 	public void setUp() {
 		nodes = new SetOfStrings();
-		edges = new SetOfStrings();
+		edges = new StringRelation();
+		edges.setSetMemberElements(nodes);
 		//r = new StringRelation();
 	}
 
@@ -34,24 +35,24 @@ public class StringRelationTest {
 	}
 	
 	@Test
-	public void testISValidTrue() {
+	public void testIsValidTrue() {
 		nodes.insertElement("0");
 		nodes.insertElement("1");
 		nodes.insertElement("2");
 		edges.insertElement("0,0");
 		edges.insertElement("1,1");
-		r = new StringRelation(nodes, edges);
-		assertEquals(true, r.isValid());
+		//r = new StringRelation(nodes, edges);
+		assertEquals(true, edges.isValid());
 	}
 
 	@Test
-	public void testISValidFalse() {
+	public void testIsValidFalse() {
 		nodes.insertElement("0");
 		nodes.insertElement("1");
 		nodes.insertElement("2");
 		edges.insertElement("0,0");
-		edges.insertElement("2,1");
-		r = new StringRelation(nodes, edges);
-		assertEquals(false, r.isValid());
+		edges.insertElement("3,1");
+		//r = new StringRelation(nodes, edges);
+		assertEquals(false, edges.isValid());
 	}
 }

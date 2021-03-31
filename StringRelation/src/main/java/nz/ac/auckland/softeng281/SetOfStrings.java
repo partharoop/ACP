@@ -16,7 +16,7 @@ import java.util.NoSuchElementException;
 
 
 public class SetOfStrings {
-	private List<String> setv;
+	protected List<String> setv;
 
 	/**
 	 * create an empty SetOfStrings -- constructor
@@ -210,7 +210,7 @@ public class SetOfStrings {
 		}
 		SetOfStrings set = (SetOfStrings) other;
 		//return setv.equals(set.setv);
-		return (subset((SetOfStrings) other) && ((SetOfStrings) other).subset(this));
+		return (subset(set) &&  set.subset(this));
 		
 	}
 
