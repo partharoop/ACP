@@ -123,7 +123,7 @@ public class SetOfStringsTest {
 	}
 	
 	//Product with a set2 of size 1
-	/*@Test public void testProduct1() {
+	@Test public void testProduct1() {
 		set1.insertElement("a");
 		set1.insertElement("b");
 		set1.insertElement("c");
@@ -133,7 +133,7 @@ public class SetOfStringsTest {
 		expected.insertElement("b,a");
 		expected.insertElement("c,a");
 		assertEquals(expected, set1.product(set2));
-	}*/
+	}
 	
 		//Product with a set2 of size 3
 		@Test public void testProduct2() {
