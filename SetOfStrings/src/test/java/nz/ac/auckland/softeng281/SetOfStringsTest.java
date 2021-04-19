@@ -34,8 +34,7 @@ public class SetOfStringsTest {
 		set1.insertElement("a");
 		set1.insertElement("b");
 		set1.insertElement("a");
-		//assertTrue(set1.isMember("a"));
-		//assertTrue(set1.isMember("b"));
+
 		SetOfStrings expected = new SetOfStrings();
 		expected.insertElement("a");
 		expected.insertElement("b");
