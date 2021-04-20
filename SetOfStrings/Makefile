@@ -8,8 +8,8 @@ ifeq ($(OS),Windows_NT)
     delimiter = \\
     clean_command = rd /s /q
 else
-	src = src/main/java
-	src_test = src/test/java
+    src = src/main/java
+    src_test = src/test/java
     classpath = $(bin):lib/junit-4.13.1.jar:lib/hamcrest-core-1.3.jar
     package_path = nz/ac/auckland/softeng281
     delimiter = /
@@ -30,19 +30,13 @@ clean:
 build: clean
 	javac -cp $(classpath) -d $(bin) $(src)/$(package_path)/SetOfStrings.java $(src_test)/$(package_path)/SetOfStringsTest.java 
 
-run: clean
-	java -cp $(classpath) $(package).SetOfStrings
 
 dependencies:
 	which java javac
 
-clean:
-	rm -rfv $(bin)/*
 
 
 test: clean build
 	java -cp $(classpath) org.junit.runner.JUnitCore $(package).SetOfStringsTest
 
 
-run: clean build 
-	java -cp $(classpath) $(package).SetOfStringsTest
