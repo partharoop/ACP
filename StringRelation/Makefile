@@ -28,21 +28,15 @@ clean:
 	$(clean_command) $(bin)$(delimiter)$(package_path)$(delimiter)
 
 build: clean
-	javac -cp $(classpath) -d $(bin) $(src)/$(package_path)/SetOfStrings.java  $(src)/$(package_path)/StringRelation.java $(src_test)/$(package_path)/SetOfStringsTest.java $(src_test)/$(package_path)/StringRelationTest.java
-
-run: clean
-	java -cp $(classpath) $(package).SetOfStrings $(package).StringRelation
-
-dependencies:
-	which java javac
+	javac -cp $(classpath) -d $(bin) $(src)/$(package_path)/SetOfStrings.java  $(src)/$(package_path)/StringRelation.java $(src_test)/$(package_path)/SetOfStringsTest.java $(src_test)/$(package_path)/StringRelationTest.java 
 
 clean:
 	rm -rfv $(bin)/*
 
-
 test: clean build
-	java -cp $(classpath) org.junit.runner.JUnitCore $(package).SetOfStringsTest  $(package).StringRelationTest
+	java -cp $(classpath) org.junit.runner.JUnitCore $(package).SetOfStringsTest $(package).StringRelationTest
 
 
 run: clean build 
-	java -cp $(classpath) $(package).StringRelation
+	java -cp $(classpath) $(package).SetOfStringsTest $(package).StringRelationTest
+
